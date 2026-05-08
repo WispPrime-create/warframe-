@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Volt Prime | 星际战甲仓鼠自助</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;600&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:
+radial-gradient(circle at top, rgba(255,220,130,0.13), transparent 30%),
+radial-gradient(circle at 80% 20%, rgba(80,180,255,0.08), transparent 28%),
+linear-gradient(to bottom,#040507,#091018 45%,#040507);
+font-family:'Noto Sans SC',sans-serif;
+color:#f5e7c5;
+overflow-x:hidden;
+}
+
+header{
+padding:24px 8%;
+border-bottom:1px solid rgba(214,179,106,0.2);
+backdrop-filter:blur(10px);
+position:sticky;
+top:0;
+z-index:50;
+background:rgba(5,8,12,0.84);
+}
+
+.logo h1{
+font-family:'Orbitron',sans-serif;
+font-size:2rem;
+color:#f0d18c;
+letter-spacing:2px;
+}
+
+.container{
+display:grid;
+grid-template-columns:280px 1fr;
+gap:40px;
+padding:50px 8%;
+}
+
+.sidebar{
+position:sticky;
+top:110px;
+height:fit-content;
+padding:24px;
+border-radius:24px;
+background:rgba(255,255,255,0.04);
+border:1px solid rgba(214,179,106,0.15);
+backdrop-filter:blur(10px);
+}
+
+.sidebar h3{
+margin-bottom:22px;
+font-family:'Orbitron',sans-serif;
+color:#f0d18c;
+}
+
+.sidebar a{
+display:block;
+text-decoration:none;
+color:#d7c79f;
+margin-bottom:16px;
+transition:0.3s;
+}
+
+.sidebar a:hover{
+color:white;
+transform:translateX(5px);
+}
+
+.content{
+display:flex;
+flex-direction:column;
+gap:30px;
+}
+
+.hero{
+padding:42px;
+border-radius:32px;
+background:
+linear-gradient(145deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02));
+border:1px solid rgba(214,179,106,0.15);
+position:relative;
+overflow:hidden;
+}
+
+.hero::after{
+content:'';
+position:absolute;
+width:420px;
+height:420px;
+right:-130px;
+top:-150px;
+background:radial-gradient(circle, rgba(80,180,255,0.18), transparent 70%);
+border-radius:50%;
+}
+
+.hero h2{
+font-size:3.5rem;
+font-family:'Orbitron',sans-serif;
+margin-bottom:18px;
+color:#f7deb0;
+text-shadow:0 0 24px rgba(214,179,106,0.35);
+}
+
+.hero p{
+line-height:1.9;
+color:#b7bfcc;
+max-width:900px;
+position:relative;
+z-index:2;
+}
+
+.tag{
+display:inline-block;
+padding:8px 14px;
+margin:6px;
+border-radius:999px;
+background:rgba(214,179,106,0.14);
+color:#f0d18c;
+font-size:0.9rem;
+}
+
+.section{
+padding:34px;
+border-radius:28px;
+background:rgba(255,255,255,0.04);
+border:1px solid rgba(214,179,106,0.15);
+}
+
+.section h3{
+margin-bottom:24px;
+font-size:1.5rem;
+font-family:'Orbitron',sans-serif;
+color:#f0d18c;
+}
+
+.ability{
+padding:24px;
+border-radius:22px;
+margin-bottom:24px;
+background:rgba(255,255,255,0.03);
+border:1px solid rgba(214,179,106,0.12);
+transition:0.3s;
+}
+
+.ability:hover{
+transform:translateY(-4px);
+border-color:#f0d18c;
+box-shadow:0 0 22px rgba(214,179,106,0.11);
+}
+
+.ability h4{
+margin-bottom:12px;
+font-size:1.2rem;
+color:#f7deb0;
+}
+
+.ability p{
+line-height:1.8;
+color:#b5becb;
+}
+
+.rating{
+margin-top:20px;
+padding:22px;
+border-radius:20px;
+background:rgba(214,179,106,0.08);
+border:1px solid rgba(214,179,106,0.18);
+}
+
+.rating h4{
+margin-bottom:10px;
+color:#f0d18c;
+}
+
+.video-link,
+.back-home{
+display:inline-block;
+margin-top:14px;
+padding:12px 18px;
+border-radius:14px;
+background:rgba(214,179,106,0.14);
+color:#f0d18c;
+text-decoration:none;
+transition:0.3s;
+}
+
+.video-link:hover,
+.back-home:hover{
+background:rgba(214,179,106,0.24);
+transform:translateY(-3px);
+}
+
+.source-note{
+font-size:0.9rem;
+color:#8d97a7;
+line-height:1.7;
+margin-top:16px;
+}
+
+footer{
+padding:50px 8%;
+text-align:center;
+color:#8d97a7;
+}
+
+@media(max-width:900px){
+.container{
+grid-template-columns:1fr;
+}
+
+.sidebar{
+position:relative;
+top:0;
+}
+
+.hero h2{
+font-size:2.5rem;
+}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">
+<h1>星际战甲仓鼠自助</h1>
+</div>
+</header>
+
+<div class="container">
+
+<div class="sidebar">
+<h3>VOLT PRIME</h3>
+
+<a href="#intro">战甲简介</a>
+<a href="#abilities">技能介绍</a>
+<a href="#helminth">移植推荐</a>
+<a href="#build">Build 推荐</a>
+<a href="#farm">获取方式</a>
+<a href="#craft">制造材料</a>
+<a href="#videos">视频参考</a>
+
+<a class="back-home" href="index.html">返回首页</a>
+</div>
+
+<div class="content">
+
+<section class="hero" id="intro">
+<h2>VOLT PRIME</h2>
+
+<p>
+Volt 是一个以电能、速度和防护为核心的战甲，也是 Warframe 的三名初始可选战甲之一。
+他可以通过 Speed 为队伍提供高速移动与装填加成，也可以用 Electric Shield 提供防护与武器增伤。
+在 Eidolon 捕获、圣殿突袭、跑图、低中高强度任务里，Volt 都有很明确的定位。
+</p>
+
+<br>
+
+<div class="tag">Starter Frame</div>
+<div class="tag">Speed</div>
+<div class="tag">Electric Shield</div>
+<div class="tag">Eidolon</div>
+<div class="tag">Team Utility</div>
+
+<div class="rating">
+<h4>仓鼠评价</h4>
+<p>
+Volt 是那种“刚开始觉得只是跑得快，玩久了发现哪都用得上”的战甲。
+他不是最无脑的生存甲，但功能非常扎实：跑图、增伤、电盾、防守、刷经验、夜灵队伍都能见到他。
+如果说 Wisp 是温柔全能辅助，那 Volt 就是仓鼠冲刺专用充电宝。
+</p>
+</div>
+</section>
+
+<section class="section" id="abilities">
+<h3>技能介绍</h3>
+
+<div class="ability">
+<h4>Passive - 静电蓄能</h4>
+<p>
+Volt 在地面移动时会为下一次攻击积蓄电击伤害。这个被动在日常体验里存在感不算最强，但它很好地体现了 Volt 的定位：移动越多，电能越强。
+</p>
+</div>
+
+<div class="ability">
+<h4>1 - Shock（电击）</h4>
+<p>
+向目标释放电击，对敌人造成伤害并产生连锁效果。
+<br><br>
+中文理解：
+Shock 是 Volt 的基础控制与补伤技能。它不是主要输出核心，但可以用来触发电击异常、打断敌人，配合技能强化 Mod 时也有一定辅助价值。
+</p>
+<a class="video-link" href="https://www.youtube.com/results?search_query=Warframe+Volt+Shock+ability+guide" target="_blank">
+观看 Shock 技能视频
+</a>
+</div>
+
+<div class="ability">
+<h4>2 - Speed（加速）</h4>
+<p>
+Volt 为自己和附近队友提供移动速度、装填速度与近战速度加成。
+<br><br>
+中文理解：
+这是 Volt 最标志性的技能。跑图、刷裂缝、赶路、近战流都很舒服。但在多人任务里，Speed 有时候也会让队友“突然飙车撞墙”，所以别太坏哦。
+</p>
+<a class="video-link" href="https://www.youtube.com/results?search_query=Warframe+Volt+Speed+build+guide" target="_blank">
+观看 Speed 技能视频
+</a>
+</div>
+
+<div class="ability">
+<h4>3 - Electric Shield（电力屏障）</h4>
+<p>
+放置一道电力屏障，阻挡敌方投射物。友方子弹穿过屏障时会获得电击伤害加成与暴击伤害加成。
+<br><br>
+中文理解：
+这是 Volt 在夜灵捕获和武器平台玩法中的核心技能。你可以把它理解成“能防御的增伤板”。只要武器输出穿过盾，就能获得非常强的收益。
+</p>
+<a class="video-link" href="https://www.youtube.com/results?search_query=Warframe+Volt+Electric+Shield+guide" target="_blank">
+观看 Electric Shield 技能视频
+</a>
+</div>
+
+<div class="ability">
+<h4>4 - Discharge（过载放电）</h4>
+<p>
+释放大范围电磁脉冲，对周围敌人造成电击伤害并使其陷入控制状态。
+<br><br>
+中文理解：
+Discharge 是 Volt 的范围控制与清场技能。它在圣殿突袭、普通清图和控场中很好用，但在极高等级环境中更依赖强度、范围和队伍配合。
+</p>
+<a class="video-link" href="https://www.youtube.com/results?search_query=Warframe+Volt+Discharge+build+guide" target="_blank">
+观看 Discharge 技能视频
+</a>
+</div>
+</section>
+
+<section class="section" id="helminth">
+<h3>移植推荐</h3>
+
+<div class="ability">
+<h4>Roar（犀牛怒吼）</h4>
+<p>
+来源：Rhino。
+<br><br>
+效果：
+提高整体伤害，适合武器平台、电盾输出和夜灵相关玩法。
+<br><br>
+中文理解：
+Roar 是最稳定的泛用增伤。你不确定该移植什么时，Roar 通常不会错。
+</p>
+<a class="video-link" href="https://www.youtube.com/results?search_query=Warframe+Volt+Roar+Helminth+build" target="_blank">
+观看 Roar Volt Build
+</a>
+</div>
+
+<div class="ability">
+<h4>Eclipse（月蚀）</h4>
+<p>
+来源：Mirage。
+<br><br>
+效果：
+根据环境光照提供增伤或减伤。
+<br><br>
+中文理解：
+Eclipse 很适合把 Volt 做成武器增伤平台，尤其是配合高暴击武器和 Electric Shield。
+</p>
+<a class="video-link" href="https://www.youtube.com/results?search_query=Warframe+Volt+Eclipse+Helminth+build" target="_blank">
+观看 Eclipse Volt Build
+</a>
+</div>
+
+<div class="ability">
+<h4>Empower（强化）</h4>
+<p>
+来源：Helminth 系统自带技能。
+<br><br>
+效果：
+强化下一次技能的能力强度。
+<br><br>
+中文理解：
+如果你想让 Speed 或 Discharge 更舒服，Empower 是一个简单直接的选择。它不花哨，但很适合新手过渡。
+</p>
+<a class="video-link" href="https://www.youtube.com/results?search_query=Warframe+Volt+Empower+Helminth+build" target="_blank">
+观看 Empower Volt Build
+</a>
+</div>
+
+<div class="ability">
+<h4>Terrify（恐惧）</h4>
+<p>
+来源：Nekros。
+<br><br>
+效果：
+恐惧敌人，并可通过配置实现削甲。
+<br><br>
+中文理解：
+适合把 Volt 做成范围控场与削甲玩法，尤其在 Steel Path 中能改善对高护甲敌人的处理能力。
+</p>
+<a class="video-link" href="https://www.youtube.com/results?search_query=Warframe+Volt+Terrify+Helminth+build" target="_blank">
+观看 Terrify Volt Build
+</a>
+</div>
+</section>
+
+<section class="section" id="build">
+<h3>Build 推荐</h3>
+
+<div class="ability">
+<h4>跑图 / 裂缝 Speed 流</h4>
+<p>
+推荐思路：
+高强度 + 高持续时间。
+<br><br>
+常见 MOD：
+<br>
+• Ability Strength 类 MOD
+<br>
+• Primed Continuity
+<br>
+• Streamline
+<br>
+• Stretch
+<br>
+• Rush / Sprint Boost 相关机动配置
+</p>
+</div>
+
+<div class="ability">
+<h4>Electric Shield 武器平台流</h4>
+<p>
+推荐思路：
+持续时间 + 强度 + 生存。
+<br><br>
+核心玩法：
+把 Electric Shield 放在输出位置，让武器子弹穿过电盾获得增益。
+适合 Eidolon、Boss、定点输出。
+</p>
+</div>
+
+<div class="ability">
+<h4>Discharge 范围控场流</h4>
+<p>
+推荐思路：
+范围 + 强度 + 效率。
+<br><br>
+适合：
+普通清图、圣殿突袭、低中高等级控场。
+</p>
+</div>
+</section>
+
+<section class="section" id="farm">
+<h3>获取方式</h3>
+
+<p>
+普通 Volt：
+<br><br>
+• 可作为初始战甲选择之一。
+<br>
+• 也可以通过氏族道场 Tenno Lab 获取战甲及部件蓝图。
+<br><br>
+Volt Prime：
+<br><br>
+• 通过 Prime Resurgence 回归时，可以在火星 Maroo's Bazaar 找 Varzia 使用 Regal Aya 或 Aya 相关遗物方式获取。
+<br>
+• 也可以通过玩家交易获得 Volt Prime 套装蓝图。
+</p>
+
+<p class="source-note">
+资料参考：Warframe 官方获取说明、WARFRAME Wiki、灰机百科。
+</p>
+</section>
+
+<section class="section" id="craft">
+<h3>制造材料</h3>
+
+<p>
+普通 Volt 通常需要先获取：
+<br><br>
+• Volt Blueprint
+<br>
+• Volt Neuroptics
+<br>
+• Volt Chassis
+<br>
+• Volt Systems
+<br><br>
+然后在铸造厂制造部件与本体。
+<br><br>
+Volt Prime 需要：
+<br><br>
+• Volt Prime Blueprint
+<br>
+• Volt Prime Neuroptics
+<br>
+• Volt Prime Chassis
+<br>
+• Volt Prime Systems
+<br><br>
+具体材料会随部件而不同，建议实际制造前在游戏内铸造厂或 Wiki 中核对。
+</p>
+</section>
+
+<section class="section" id="videos">
+<h3>视频参考</h3>
+
+<div class="ability">
+<h4>推荐搜索关键词</h4>
+<p>
+YouTube / Bilibili 可以搜索：
+<br><br>
+• Volt Prime Eidolon Build
+<br>
+• Volt Speed Build
+<br>
+• Volt Electric Shield Guide
+<br>
+• Volt Discharge ESO Build
+<br>
+• Volt Prime Steel Path Build
+</p>
+
+<a class="video-link" href="https://www.youtube.com/results?search_query=Warframe+Volt+Prime+build+guide" target="_blank">
+打开 YouTube 搜索
+</a>
+</div>
+</section>
+
+</div>
+</div>
+
+<footer>
+星际战甲仓鼠自助 • Hamster Arsenal
+<br><br>
+Built for Tenno
+</footer>
+
+</body>
+</html>
